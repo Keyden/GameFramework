@@ -63,9 +63,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Library\DesperateDevs\Compile.cs" />
     <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
     <Compile Include="Assets\Scripts\AStar\AStarNode.cs" />
     <Compile Include="Assets\Scripts\Base\ManagerBase.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\Components\BaseComponent.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\Components\ColorComponent.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\Components\EatingComponent.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\Components\GameObjectComponent.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\Components\PositionComponent.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\Components\SizeComponent.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\Components\SpeedComponent.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\Components\TeamComponent.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\DList.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\Entity\Entity.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\Entity\MoveAbleEntity.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\GameWorld.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\System\CirclePushSystem.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\System\EatingSystem.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\System\EatSystem.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\System\EntitySystem.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\System\GameObjectSystem.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\System\InputSystem.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\System\MoveSystem.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\System\SystemBase.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\GameStateAttribute.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\GameStateCtrl.cs" />
+    <None Include="Assets\Library\Entitas\LICENSE.txt" />
+    <None Include="Assets\Library\Entitas\Entitas.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -281,6 +306,30 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>E:/Program Files/Unity2018.4.9/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Logging">
+      <HintPath>E:/UnityProject/GameFramework/Client/Assets/Library/DesperateDevs/DesperateDevs.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Networking">
+      <HintPath>E:/UnityProject/GameFramework/Client/Assets/Library/DesperateDevs/DesperateDevs.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Serialization">
+      <HintPath>E:/UnityProject/GameFramework/Client/Assets/Library/DesperateDevs/DesperateDevs.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Utils">
+      <HintPath>E:/UnityProject/GameFramework/Client/Assets/Library/DesperateDevs/DesperateDevs.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.CodeGeneration.Attributes">
+      <HintPath>E:/UnityProject/GameFramework/Client/Assets/Library/Entitas/Entitas.CodeGeneration.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas">
+      <HintPath>E:/UnityProject/GameFramework/Client/Assets/Library/Entitas/Entitas.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.Unity">
+      <HintPath>E:/UnityProject/GameFramework/Client/Assets/Library/Entitas/Entitas.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.VisualDebugging.Unity">
+      <HintPath>E:/UnityProject/GameFramework/Client/Assets/Library/Entitas/Entitas.VisualDebugging.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
