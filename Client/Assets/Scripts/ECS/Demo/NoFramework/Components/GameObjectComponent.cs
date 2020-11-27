@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 
-namespace GameFramwork.Demo.Ecs
+namespace GameFramwork.Demo.NoFrameworkEcs
 {
     /// <summary>
     /// 与Unity组件的桥接

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace GameFramwork.Demo.Ecs
+namespace GameFramwork.Demo.NoFrameworkEcs
 {
     /// <summary>
     /// 和Unity显示部分的桥接

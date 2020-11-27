@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace GameFramwork.Demo.Ecs
+namespace GameFramwork.Demo.NoFrameworkEcs
 {
     /// <summary>
     /// 增删物体和场景初始化
