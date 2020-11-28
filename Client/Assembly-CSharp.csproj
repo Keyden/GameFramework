@@ -88,41 +88,18 @@
     <Compile Include="Assets\Scripts\ECS\Demo\NoFramework\System\MoveSystem.cs" />
     <Compile Include="Assets\Scripts\ECS\Demo\NoFramework\System\SystemBase.cs" />
     <Compile Include="Assets\Scripts\ECS\Demo\UnityECSFramework\Component\MoveComponent.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\UnityECSFramework\Entity\EntitiesManager.cs" />
     <Compile Include="Assets\Scripts\ECS\Demo\UnityECSFramework\System\InputSystem.cs" />
     <Compile Include="Assets\Scripts\ECS\Demo\UnityECSFramework\System\MoveSystem.cs" />
     <Compile Include="Assets\Scripts\StateMachine\GameStateAttribute.cs" />
     <Compile Include="Assets\Scripts\StateMachine\GameStateCtrl.cs" />
     <None Include="Assets\Library\Entitas\LICENSE.txt" />
     <None Include="Assets\Library\Entitas\Entitas.xml" />
-    <Reference Include="Unity.Jobs">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Jobs.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Jobs.Editor">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Jobs.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Collections">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
@@ -130,47 +107,14 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Runtime">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst">
-      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Entities.Properties">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Entities.Properties.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Jobs">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Jobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Jobs.Editor">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Jobs.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.Editor">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Entities.Editor.dll</HintPath>
@@ -181,26 +125,62 @@
     <Reference Include="Unity.Burst.Editor">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Scenes.Hybrid">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Scenes.Hybrid.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Scenes.Editor">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Scenes.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics.Extensions">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Mathematics.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Extensions.Hybrid">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Mathematics.Extensions.Hybrid.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rendering.Hybrid">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Rendering.Hybrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-weaver.Editor">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Entities.BuildUtils">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Entities.BuildUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.Hybrid">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Entities.Hybrid.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Properties">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Properties.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Entities.dll</HintPath>
@@ -211,8 +191,32 @@
     <Reference Include="Unity.Transforms.Editor">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Transforms.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Transforms.Hybrid">
       <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/Unity.Transforms.Hybrid.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-hlapi.Runtime">
+      <HintPath>E:/UnityProject/GameFramework/Client/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>E:/Program/Unity2019.2.20/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
