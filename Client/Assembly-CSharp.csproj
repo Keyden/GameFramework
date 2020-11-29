@@ -68,6 +68,9 @@
     <Compile Include="Assets\Scripts\AStar\AStarNode.cs" />
     <Compile Include="Assets\Scripts\Base\ManagerBase.cs" />
     <Compile Include="Assets\Scripts\ECS\Demo\DList.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\HybridECS\EntityManager.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\HybridECS\MovementComponent.cs" />
+    <Compile Include="Assets\Scripts\ECS\Demo\HybridECS\MovementSystem.cs" />
     <Compile Include="Assets\Scripts\ECS\Demo\NoFramework\Components\BaseComponent.cs" />
     <Compile Include="Assets\Scripts\ECS\Demo\NoFramework\Components\ColorComponent.cs" />
     <Compile Include="Assets\Scripts\ECS\Demo\NoFramework\Components\EatingComponent.cs" />
