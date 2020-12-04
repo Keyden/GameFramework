@@ -30,7 +30,7 @@ namespace GameFramwork.AStar
         public int mapH;
 
         //地图相关所有的格子对象容器
-        private AStarNode[,] nodes;
+        public AStarNode[,] nodes;
 
         //开启列表
         private List<AStarNode> openList;
@@ -172,6 +172,9 @@ namespace GameFramwork.AStar
             if(a.f > b.f)
             {
                 return -1;
+            }else if(a.f == b.f)
+            {
+                return 1;
             }
             else
             {
