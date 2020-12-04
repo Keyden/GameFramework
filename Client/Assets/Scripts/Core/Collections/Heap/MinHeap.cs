@@ -59,6 +59,7 @@ namespace GameFramwork.Collections
             return Dequeue(true);
         }
 
+
         /// <summary>
         /// 去除堆中的最小值
         /// </summary>
@@ -83,7 +84,7 @@ namespace GameFramwork.Collections
                 --_count;
                 //取序列最后的元素放在堆顶
                 _items[0] = _items[_count];
-                _items[_count] = default(T);
+                _items[_count] = default;
                 //维护堆的结构
                 BubbleDown();
             }
@@ -164,6 +165,7 @@ namespace GameFramwork.Collections
         {
             while(startIndex > 0)
             {
+                
                 int parent = (startIndex - 1) / 2;
                 //如果子节点小于父节点,交换子节点和父节点
                 if (_comparer.Compare(_items[startIndex], _items[parent]) < 0)

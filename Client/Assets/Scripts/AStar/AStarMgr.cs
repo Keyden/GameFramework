@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 using UnityEngine.Analytics;
+using GameFramwork.Collections;
 
 namespace GameFramwork.AStar
 {
@@ -35,8 +36,13 @@ namespace GameFramwork.AStar
         //开启列表
         private List<AStarNode> openList;
 
+        //开启堆(优化)
+        private MinHeap<AStarNode> openHeap;
+
         //关闭列表
         private List<AStarNode> closeList;
+
+        private int findIndex = 0;
 
         /// <summary>
         /// 初始化地图信息
@@ -50,6 +56,9 @@ namespace GameFramwork.AStar
             mapH = h;
             openList = new List<AStarNode>();
             closeList = new List<AStarNode>();
+            findIndex++;
+
+            openHeap = new MinHeap<AStarNode>();
 
             for (int i = 0; i < w; i++)
             {
@@ -92,6 +101,7 @@ namespace GameFramwork.AStar
             //清空关闭和开启列表
             openList.Clear();
             closeList.Clear();
+            
 
             //把开始点放入关闭列表中
             start.father = null;
@@ -133,6 +143,8 @@ namespace GameFramwork.AStar
                 closeList.Add(openList[count - 1]);
                 //找到的这个点又变成新的起点,进行下一次寻路
                 start = openList[count - 1];
+
+                start.FindIndex = findIndex;//优化
 
                 openList.RemoveAt(count - 1);
 
@@ -199,7 +211,8 @@ namespace GameFramwork.AStar
             //判断这些点 是否是边界 是否是阻挡 是否子啊开启或者关闭列表 如果都不是 才放入开启列表
             if (node == null ||
                 node.type == E_Node_Type.Stop ||
-                closeList.Contains(node) ||
+                //closeList.Contains(node) ||
+                node.FindIndex == this.findIndex ||//当前节点在关闭列表中
                 openList.Contains(node)
                 )
             {

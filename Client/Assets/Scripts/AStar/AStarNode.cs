@@ -34,6 +34,8 @@ namespace GameFramwork.AStar
         //格子类型
         public E_Node_Type type;
 
+        public int FindIndex { get; set; } = 0;
+
         public AStarNode(int x,int y,E_Node_Type type)
         {
             this.x = x;

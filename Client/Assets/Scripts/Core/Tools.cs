@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace GameFramwork
+namespace GameFramwork.Collections.Tool
 {
     public static class Tools
     {
-       // List
-           //Dictionary 
-           //Stack
+
     }
 }
