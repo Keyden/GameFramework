@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace GameFramwork.AStar
 {
@@ -15,12 +16,12 @@ namespace GameFramwork.AStar
     }
 
 
-    public class AStarNode
+    public class AStarNode :IComparable
     {
         //格子对象坐标
         public int x;
         public int y;
-
+        public string Name { get; set; }
 
         //寻路消耗
         public float f;
@@ -29,7 +30,7 @@ namespace GameFramwork.AStar
         //离终点的距离
         public float h;
         //父对象
-        public AStarNode father;
+        public AStarNode father = null;
 
         //格子类型
         public E_Node_Type type;
@@ -41,6 +42,19 @@ namespace GameFramwork.AStar
             this.x = x;
             this.y = y;
             this.type = type;
+        }
+
+        public int CompareTo(object obj)
+        {
+            AStarNode other = obj as AStarNode;
+            if (this.f <= other.f)
+            {
+                return -1;
+            }else
+            {
+                return 1;
+            }
+
         }
     }
 }

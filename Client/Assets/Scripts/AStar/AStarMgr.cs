@@ -34,9 +34,9 @@ namespace GameFramwork.AStar
         public AStarNode[,] nodes;
 
         //开启列表
-        private List<AStarNode> openList;
+        //private List<AStarNode> openList;
 
-        //开启堆(优化)
+        //开启列表堆(优化)
         private MinHeap<AStarNode> openHeap;
 
         //关闭列表
@@ -54,18 +54,18 @@ namespace GameFramwork.AStar
             nodes = new AStarNode[w, h];
             mapW = w;
             mapH = h;
-            openList = new List<AStarNode>();
+            //openList = new List<AStarNode>();
             closeList = new List<AStarNode>();
-            findIndex++;
+            
 
-            openHeap = new MinHeap<AStarNode>();
+            openHeap = new MinHeap<AStarNode>();//创建最小堆
 
             for (int i = 0; i < w; i++)
             {
                 for(int j = 0; j < h; j++)
                 {
                     AStarNode node = new AStarNode(i, j, Random.Range(0, 100) < 20 ? E_Node_Type.Stop : E_Node_Type.walk);
-
+                    node.Name = j + "_" + i;
                     nodes[i, j] = node;
 
                 }
@@ -98,17 +98,19 @@ namespace GameFramwork.AStar
                 Debug.Log("开始或者结束点是阻挡");
                 return null;
             }
+            findIndex++;//标志位+1
             //清空关闭和开启列表
-            openList.Clear();
+            //openList.Clear();
             closeList.Clear();
-            
+            openHeap.Clear();
 
             //把开始点放入关闭列表中
             start.father = null;
             start.f = 0;
             start.g = 0;
             start.h = 0;
-            closeList.Add(start);
+
+            AddToCloseList(start);
 
             while (true)
             {
@@ -131,27 +133,41 @@ namespace GameFramwork.AStar
                 FindNearlyNodeToOpenList(start.x + 1, start.y + 1, 1.4f, start, end);
 
                 //死路判断 开启列表为空都还没找到终点
-                if(openList.Count == 0)
+                //if(openList.Count == 0)
+                //{
+                //    Debug.Log("未找到路径");
+                //    return null;
+                //}
+
+                if(openHeap.Count == 0)
                 {
                     Debug.Log("未找到路径");
                     return null;
                 }
 
                 //选出开启列表中寻路消耗最小的点放入关闭列表中,再从开启列表中移除
-                openList.Sort(SortOpenList);//openList中第openList.Count-1个点是f值最小的点
-                int count = openList.Count;
-                closeList.Add(openList[count - 1]);
+                //openList.Sort(SortOpenList);//openList中第openList.Count-1个点是f值最小的点
+
+
+               // int count = openList.Count;
+                //closeList.Add(openList[count - 1]);
+
+
                 //找到的这个点又变成新的起点,进行下一次寻路
-                start = openList[count - 1];
+                //start = openList[count - 1];
 
-                start.FindIndex = findIndex;//优化
-
-                openList.RemoveAt(count - 1);
+                start = openHeap.Dequeue();
 
 
+                AddToCloseList(start);
+
+                //openList.RemoveAt(count - 1);
+
+                //Debug.Log(start.Name + ", " + end.Name);
 
                 //如果这个点已经是终点,得到最终结果返回数据
                 //如果不是终点,继续寻路
+
                 if (start == end)
                 {
                     //找到路径
@@ -159,10 +175,17 @@ namespace GameFramwork.AStar
 
                     path = new List<AStarNode>();
                     path.Add(end);
+                    int cnt = 0;
                     while (end.father!=null)
                     {
                         path.Add(end.father);
                         end = end.father;
+
+                        if (++cnt > 100)
+                        {
+                            break;
+                        }
+                        
                     }
                     //列表反转
                     path.Reverse();
@@ -172,6 +195,16 @@ namespace GameFramwork.AStar
             }
             return path;
         }//
+
+        /// <summary>
+        /// 将点添加到关闭列表走红
+        /// </summary>
+        /// <param name="node"></param>
+        private void AddToCloseList(AStarNode node)
+        {
+            closeList.Add(node);
+            node.FindIndex = this.findIndex;
+        }
 
         /// <summary>
         /// 排序
@@ -208,12 +241,14 @@ namespace GameFramwork.AStar
             }
 
             AStarNode node = nodes[x, y];
+
             //判断这些点 是否是边界 是否是阻挡 是否子啊开启或者关闭列表 如果都不是 才放入开启列表
             if (node == null ||
                 node.type == E_Node_Type.Stop ||
                 //closeList.Contains(node) ||
                 node.FindIndex == this.findIndex ||//当前节点在关闭列表中
-                openList.Contains(node)
+                //openList.Contains(node)
+                node.FindIndex == -1 * this.findIndex //当前节点在开放列表最小堆中
                 )
             {
                 return;
@@ -226,10 +261,10 @@ namespace GameFramwork.AStar
             //计算h
             node.h = Mathf.Abs(end.x - node.x) + Mathf.Abs(end.y - node.y);
             node.f = node.g + node.h;
-
-
-
-            openList.Add(node);
+            node.FindIndex = -1*this.findIndex;//加入到开放列表的点的FindeIndex值是当前全局findIndex值的取反
+          
+            //openList.Add(node);
+            openHeap.Enqueue(node);
         }
     }
 }

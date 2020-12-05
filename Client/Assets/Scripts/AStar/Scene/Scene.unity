@@ -289,7 +289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712571096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.08, y: 0, z: -14.36}
+  m_LocalPosition: {x: 3.98, y: 0, z: -14.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -311,8 +311,8 @@ MonoBehaviour:
   beginY: 5
   offsetX: 2
   offsetY: -2
-  mapW: 10
-  mapH: 10
+  mapW: 5
+  mapH: 5
   redMat: {fileID: 2100000, guid: 585e3dd86dd0f65458ca5d8f472467e6, type: 2}
   yellowMat: {fileID: 2100000, guid: c677820ec6b12d64791be8a9a93d4e33, type: 2}
   greenMat: {fileID: 2100000, guid: fa7568e6bc82ebf48aedc457d5305206, type: 2}

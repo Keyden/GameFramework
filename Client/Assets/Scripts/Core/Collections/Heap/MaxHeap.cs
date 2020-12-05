@@ -5,10 +5,11 @@ using UnityEngine;
 
 namespace GameFramwork.Collections
 {
-    public class MaxHeap <T>
+    public class MaxHeap <T> where T : IComparable
     {
         private const int DEFAULT_CAPACITY = 6;
-        private int _count;
+
+        public int Count { get; private set; }
         private T[] _items;
         private Comparer<T> _comparer;
 
@@ -37,14 +38,14 @@ namespace GameFramwork.Collections
         /// <returns>是否到达根节点</returns>
         public bool Enqueue(T value)
         {
-            if (_count == _items.Length)
+            if (Count == _items.Length)
             {
                 ResizeItemStore(_items.Length * 2);
 
             }
 
-            _items[_count++] = value;
-            int position = BubbleUp(_count - 1);
+            _items[Count++] = value;
+            int position = BubbleUp(Count - 1);
             return position == 0;
         }
 
@@ -64,24 +65,24 @@ namespace GameFramwork.Collections
         /// <returns></returns>
         private T Dequeue(bool shrink)
         {
-            if (_count == 0)
+            if (Count == 0)
             {
                 throw new InvalidOperationException();
             }
 
             T result = _items[0];
 
-            if (_count == 1)
+            if (Count == 1)
             {
-                _count = 0;
+                Count = 0;
                 _items[0] = default(T);
             }
             else
             {
-                --_count;
+                --Count;
                 //取序列最后的元素放在堆顶
-                _items[0] = _items[_count];
-                _items[_count] = default(T);
+                _items[0] = _items[Count];
+                _items[Count] = default(T);
                 //维护堆的结构
                 BubbleDown();
             }
@@ -98,9 +99,9 @@ namespace GameFramwork.Collections
         private void ShrinkStore()
         {
             //如果容量不足一半以上,默认容量会下降
-            if (_items.Length > DEFAULT_CAPACITY && _count < (_items.Length >> 1))
+            if (_items.Length > DEFAULT_CAPACITY && Count < (_items.Length >> 1))
             {
-                int newSize = Math.Max(DEFAULT_CAPACITY, (((_count / DEFAULT_CAPACITY) + 1) * DEFAULT_CAPACITY));
+                int newSize = Math.Max(DEFAULT_CAPACITY, (((Count / DEFAULT_CAPACITY) + 1) * DEFAULT_CAPACITY));
                 ResizeItemStore(newSize);
             }
         }
@@ -111,13 +112,13 @@ namespace GameFramwork.Collections
         /// <param name="newSize"></param>
         private void ResizeItemStore(int newSize)
         {
-            if (_count < newSize || DEFAULT_CAPACITY <= newSize)
+            if (Count < newSize || DEFAULT_CAPACITY <= newSize)
             {
                 return;
             }
 
             T[] temp = new T[newSize];
-            Array.Copy(_items, 0, temp, 0, _count);
+            Array.Copy(_items, 0, temp, 0, Count);
             _items = temp;
         }
 
@@ -129,12 +130,12 @@ namespace GameFramwork.Collections
         {
             int parent = 0;
             int leftChild = (parent * 2) + 1;
-            while (leftChild < _count)
+            while (leftChild < Count)
             {
                 //找到子结点中较小的那个
                 int rightChild = leftChild + 1;
 
-                int bestChild = (rightChild < _count && _comparer.Compare(_items[rightChild], _items[leftChild]) > 0 ? rightChild : leftChild);
+                int bestChild = (rightChild < Count && _comparer.Compare(_items[rightChild], _items[leftChild]) > 0 ? rightChild : leftChild);
 
                 if (_comparer.Compare(_items[bestChild], _items[parent]) > 0)
                 {
